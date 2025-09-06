@@ -6,7 +6,12 @@ vendor/
 
 # IDE / Editor
 .vscode/
+.idea/
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Logs & env
+*.log
+.env
