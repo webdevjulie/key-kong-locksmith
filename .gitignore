@@ -1,0 +1,12 @@
+# Node
+node_modules/
+
+# Composer / PHP
+vendor/
+
+# IDE / Editor
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
