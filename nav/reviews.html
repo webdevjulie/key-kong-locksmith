@@ -1,0 +1,854 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Key-Kong Locksmith</title>
+    <link rel="icon" href="../images/key.webp" type="image/webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .review-card {
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        
+        .review-card.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .review-card.prev {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        
+        .avatar {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+        
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+        
+        .dot {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: #f59e0b;
+            transform: scale(1.2);
+        }
+        
+        .star {
+            color: #fbbf24;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+        
+        .slideshow-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-icon {
+            font-size: 2rem;
+            opacity: 0.3;
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body>
+<!-- NAVIGATION WITH TOP INFO BAR -->
+<nav class="bg-white bg-opacity-90 backdrop-blur-sm border-b border-[#d4b25a] fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between py-3">
+    <!-- Logo -->
+    <div class="flex items-center space-x-4">
+      <img src="../../images/logo.webp" alt="Key-Kong Logo" class="h-10 w-auto"/>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden lg:flex items-center space-x-6 text-sm font-normal text-[#111111]">
+      <!-- Our Services Dropdown -->
+      <li class="relative group cursor-pointer">
+        <a href="services.html" class="flex items-center gap-1 font-semibold text-[#111111] hover:text-[#FFAA33] transition duration-300">
+          Our Services
+          <span class="material-icons text-xs">expand_more</span>
+        </a>
+        <!-- Dropdown -->
+        <div class="absolute left-0 top-full mt-2 w-[700px] bg-white border border-[#d4b25a] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-6 grid grid-cols-4 gap-6 rounded-lg z-50">
+          <!-- Emergency Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">warning</span>
+              Emergency Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/emergency-locksmith/car-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Lockout</a></li>
+              <li><a href="/services/emergency-locksmith/house-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">House Lockout</a></li>
+              <li><a href="/services/emergency-locksmith/business-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Business Lockout</a></li>
+              <li><a href="/services/emergency-locksmith/storage-unit-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Storage Unit Lockout</a></li>
+            </ul>
+          </div>
+          <!-- Residential Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">home</span>
+              Residential Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/residential-locksmith/lock-replacement.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Lock Replacement</a></li>
+              <li><a href="/services/residential-locksmith/lock-rekey.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Lock Rekey</a></li>
+              <li><a href="/services/residential-locksmith/lock-repair.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Lock Repair</a></li>
+              <li><a href="/services/residential-locksmith/gate-locks.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Gate Locks</a></li>
+            </ul>
+          </div>
+          <!-- Commercial Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">business</span>
+              Commercial Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/commercial-locksmith/commercial-lock-replacements.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Commercial Lock Replacement</a></li>
+              <li><a href="/services/commercial-locksmith/commercial-lock-rekey.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Commercial Lock Rekey</a></li>
+              <li><a href="/services/commercial-locksmith/emergency-exit-devices.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Emergency Exit Devices</a></li>
+              <li><a href="/services/commercial-locksmith/master-key-systems.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Master Key Systems</a></li>
+              <li><a href="/services/commercial-locksmith/access-control.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Access Control</a></li>
+            </ul>
+          </div>
+          <!-- Automotive Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">directions_car</span>
+              Automotive Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/automotive-locksmith/car-key-replacement.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Key Replacement</a></li>
+              <li><a href="/services/automotive-locksmith/key-fob-programming.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Key Fob Programming</a></li>
+              <li><a href="/services/automotive-locksmith/car-key-duplicate.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Key Duplicate</a></li>
+              <li><a href="/services/automotive-locksmith/car-key-cutting.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Key Cutting</a></li>
+              <li><a href="/services/automotive-locksmith/ignition-lock-cylinder.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Ignition Lock Cylinder</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- Service Areas Dropdown -->
+      <li class="relative group cursor-pointer">
+        <a href="serviceareas.html" class="flex items-center gap-1 font-semibold hover:text-[#FFAA33] transition duration-300">
+          Service Areas
+          <span class="material-icons text-xs">expand_more</span>
+        </a>
+        <div class="absolute left-0 top-full mt-2 w-48 bg-white border border-[#d4b25a] shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 p-4 rounded-lg z-50">
+          <ul class="space-y-2 text-sm text-[#111111]">
+            <li class="flex items-center gap-2 border-b-0 hover:border-b-2 hover:border-[#b37a1a] transition-all">
+              <span class="material-icons text-yellow-400 text-base">location_on</span>
+              <a href="/service-areas/california.html" class="hover:text-[#b37a1a]">California</a>
+            </li>
+            <li class="flex items-center gap-2 border-b-0 hover:border-b-2 hover:border-[#b37a1a] transition-all">
+              <span class="material-icons text-yellow-400 text-base">location_on</span>
+              <a href="/service-areas/florida.html" class="hover:text-[#b37a1a]">Florida</a>
+            </li>
+            <li class="flex items-center gap-2 border-b-0 hover:border-b-2 hover:border-[#b37a1a] transition-all">
+              <span class="material-icons text-yellow-400 text-base">location_on</span>
+              <a href="/service-areas/georgia.html" class="hover:text-[#b37a1a]">Georgia</a>
+            </li>
+            <li class="flex items-center gap-2 border-b-0 hover:border-b-2 hover:border-[#b37a1a] transition-all">
+              <span class="material-icons text-yellow-400 text-base">location_on</span>
+              <a href="/service-areas/new-jersey.html" class="hover:text-[#b37a1a]">New Jersey</a>
+            </li>
+            <li class="flex items-center gap-2 border-b-0 hover:border-b-2 hover:border-[#b37a1a] transition-all">
+              <span class="material-icons text-yellow-400 text-base">location_on</span>
+              <a href="/service-areas/texas.html" class="hover:text-[#b37a1a]">Texas</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <!-- Other Links -->
+      <li><a href="faq.html" class="font-semibold hover:text-[#FFAA33] transition duration-300">FAQ</a></li>
+      <li><a href="reviews.html" class="font-semibold hover:text-[#FFAA33] transition duration-300">Reviews</a></li>
+      <li><a href="about.html" class="font-semibold hover:text-[#FFAA33] transition duration-300">About</a></li>
+      <li><a href="contact.html" class="font-semibold hover:text-[#FFAA33] transition duration-300">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button class="lg:hidden flex items-center text-[#111111]" onclick="toggleMobileMenu()">
+      <span class="material-icons">menu</span>
+    </button>
+
+    <!-- Action Buttons -->
+    <div class="hidden lg:flex items-center space-x-4">
+      <a href="tel:2109006996" class="flex items-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
+        <span class="material-icons text-lg">phone</span>
+        <span>Call Us</span>
+      </a>
+      <a href="book-online.html" class="flex items-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
+        <span class="material-icons text-lg">calendar_today</span>
+        <span>Book Service</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div id="mobileMenu" class="fixed top-16 left-0 right-0 bg-white border-b border-[#d4b25a] shadow-lg z-40 hidden lg:hidden overflow-y-auto max-h-[calc(100vh-4rem)]">  <ul class="flex flex-col space-y-4 p-4 text-sm text-[#111111]">
+    <li>
+      <button class="w-full text-left flex justify-between items-center font-semibold hover:text-[#FFAA33]" onclick="toggleSubMenu('mobileServices')">
+        Our Services <span class="material-icons text-base">expand_more</span>
+      </button>
+      <ul id="mobileServices" class="hidden flex-col pl-4 mt-2 space-y-2">
+        <!-- Emergency Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">warning</span>
+              Emergency Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/emergency-locksmith/car-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Lockout</a></li>
+              <li><a href="/services/emergency-locksmith/house-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">House Lockout</a></li>
+              <li><a href="/services/emergency-locksmith/business-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Business Lockout</a></li>
+              <li><a href="/services/emergency-locksmith/storage-unit-lockout.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Storage Unit Lockout</a></li>
+            </ul>
+          </div>
+          <!-- Residential Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">home</span>
+              Residential Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/residential-locksmith/lock-replacement.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Lock Replacement</a></li>
+              <li><a href="/services/residential-locksmith/lock-rekey.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Lock Rekey</a></li>
+              <li><a href="/services/residential-locksmith/lock-repair.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Lock Repair</a></li>
+              <li><a href="/services/residential-locksmith/gate-lock.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Gate Locks</a></li>
+            </ul>
+          </div>
+          <!-- Commercial Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">business</span>
+              Commercial Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/commercial-locksmith/commercial-lock-replacements.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Commercial Lock Replacement</a></li>
+              <li><a href="/services/commercial-locksmith/commercial-lock-rekey.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Commercial Lock Rekey</a></li>
+              <li><a href="/services/commercial-locksmith/emergency-exit-devices.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Emergency Exit Devices</a></li>
+              <li><a href="/services/commercial-locksmith/master-key-systems.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Master Key Systems</a></li>
+              <li><a href="/services/commercial-locksmith/access-control.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Access Control</a></li>
+            </ul>
+          </div>
+          <!-- Automotive Locksmith -->
+          <div>
+            <h3 class="font-semibold text-[#FFAF1E] mb-2 flex items-center gap-2">
+              <span class="material-icons text-[#FFAF1E]">directions_car</span>
+              Automotive Locksmith
+            </h3>
+            <ul class="space-y-1 text-sm text-[#111111]">
+              <li><a href="/services/automotive-locksmith/car-key-replacement.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Key Replacement</a></li>
+              <li><a href="/services/automotive-locksmith/key-fob-programming.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Key Fob Programming</a></li>
+              <li><a href="/services/automotive-locksmith/car-key-duplicate.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Key Duplicate</a></li>
+              <li><a href="/services/automotive-locksmith/car-key-cutting.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Car Key Cutting</a></li>
+              <li><a href="/services/automotive-locksmith/ignition-lock-cylinder.html" class="hover:text-[#FFAA33] hover:underline transition-all duration-300">Ignition Lock Cylinder</a></li>
+            </ul>
+          </div>
+      </ul>
+    </li>
+    <li>
+      <button class="w-full text-left flex justify-between items-center font-semibold hover:text-[#FFAA33]" onclick="toggleSubMenu('mobileAreas')">
+        Service Areas <span class="material-icons text-base">expand_more</span>
+      </button>
+      <ul id="mobileAreas" class="hidden flex-col pl-4 mt-2 space-y-2">
+        <li class="flex items-center gap-2">
+          <span class="material-icons text-yellow-400 text-base">location_on</span>
+          <a href="/service-areas/california.html" class="hover:text-[#b37a1a]">California</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-icons text-yellow-400 text-base">location_on</span>
+          <a href="/service-areas/florida.html" class="hover:text-[#b37a1a]">Florida</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-icons text-yellow-400 text-base">location_on</span>
+          <a href="/service-areas/georgia.html" class="hover:text-[#b37a1a]">Georgia</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-icons text-yellow-400 text-base">location_on</span>
+          <a href="/service-areas/new-jersey.html" class="hover:text-[#b37a1a]">New Jersey</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="material-icons text-yellow-400 text-base">location_on</span>
+          <a href="/service-areas/texas.html" class="hover:text-[#b37a1a]">Texas</a>
+        </li>
+      </ul>
+    </li>
+    <li><a href="faq.html" class="hover:text-[#FFAA33] font-semibold">FAQ</a></li>
+    <li><a href="reviews.html" class="hover:text-[#FFAA33] font-semibold">Reviews</a></li>
+    <li><a href="about.html" class="hover:text-[#FFAA33] font-semibold">About</a></li>
+    <li><a href="contact.html" class="hover:text-[#FFAA33] font-semibold">Contact</a></li>
+  </ul>
+
+  <!-- Mobile Action Buttons -->
+  <div class="flex flex-col space-y-2 p-4 border-t border-[#d4b25a] mt-2">
+    <a href="tel:2109006996" class="flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
+      <span class="material-icons text-lg">phone</span>
+      <span>Call Us</span>
+    </a>
+    <a href="book-online.html" class="flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
+      <span class="material-icons text-lg">calendar_today</span>
+      <span>Book Service</span>
+    </a>
+  </div>
+</div>
+
+<main>
+
+  <section class="relative h-screen flex flex-col justify-center items-center px-6 w-full" style="background-image: url('../images/reviews.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- Blur overlay -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 w-full max-w-7xl text-center text-white">
+
+            <!-- Breadcrumb -->
+            <div class="text-sm text-yellow-400 mb-4 self-start max-w-full">
+                <a href="/index.html" class="hover:underline">Home</a> 
+                <span class="mx-2">›</span> 
+                <span>Reviews</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl sm:text-5xl font-bold mb-3 text-yellow-400 max-w-3xl mx-auto">
+            Customer Reviews
+            </h1>
+
+            <!-- Subtext -->
+            <p class="text-lg text-gray-200 max-w-3xl mb-8 leading-relaxed mx-auto">
+              Genuine feedback from customers who have experienced our services firsthand.
+            </p>
+
+            <!-- Stats -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-4xl mx-auto">
+                <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-xl px-6 py-4 flex-1 text-center">
+                    <div class="text-2xl font-bold text-yellow-400 mb-1">10+</div>
+                    <div class="text-sm text-yellow-200">Years Experience</div>
+                </div>
+                <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-xl px-6 py-4 flex-1 text-center">
+                    <div class="text-2xl font-bold text-yellow-400 mb-1">24/7</div>
+                    <div class="text-sm text-yellow-200">Emergency Service</div>
+                </div>
+                <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-xl px-6 py-4 flex-1 text-center">
+                    <div class="text-2xl font-bold text-yellow-400 mb-1 flex items-center justify-center mx-auto">
+                    99.6%
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-300 ml-1" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    </div>
+                    <div class="text-sm text-yellow-200">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="bg-[#fefcf9] py-16 px-4 sm:px-6">
+    <div class="container mx-auto text-center max-w-5xl">
+        <!-- Header -->
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#FFAF1E] mb-4 leading-tight">
+                What Our Clients Say
+            </h2>
+            <p class="text-base md:text-lg text-gray-500 mb-6 max-w-3xl mx-auto leading-relaxed">
+                Don't just take our word for it — here's what our satisfied customers have to say about our locksmith services.
+            </p>
+        </div>
+
+        <!-- Slideshow Container -->
+        <div class="slideshow-container relative max-w-4xl mx-auto mb-8">
+            <!-- Navigation Arrows -->
+            <button id="prevBtn" class="nav-button absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full shadow-lg border-2 border-yellow-500 flex items-center justify-center text-[#b37a1a] font-bold text-xl">
+                ‹
+            </button>
+            <button id="nextBtn" class="nav-button absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full shadow-lg border-2 border-yellow-500 flex items-center justify-center text-[#b37a1a] font-bold text-xl">
+                ›
+            </button>
+
+            <!-- Reviews Slides -->
+            <div id="reviewsContainer" class="flex justify-center items-center min-h-[320px]">
+                <!-- Review 1 -->
+                <div class="review-card active bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl border-[3px] border-[#FFAA33] w-full max-w-2xl mx-4">
+                    <div class="flex items-center mb-6">
+                        <div class="avatar w-12 h-12 rounded-full text-white flex items-center justify-center mr-4 font-bold text-lg shadow-lg">
+                            PM
+                        </div>
+                        <div class="text-left">
+                            <p class="text-lg font-bold text-gray-800">Patricia Martinez</p>
+                            <p class="text-sm text-gray-500 flex items-center justify-center sm:justify-start">
+                              <span class="material-icons mr-2 text-yellow-500 text-base">location_on</span>
+                              Weehawken, NJ
+                            </p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="quote-icon mb-2">"</div>
+                        <p class="text-gray-700 leading-relaxed text-base italic">
+                            Excellent service installing smart locks in my home. Very knowledgeable about home automation and security integration. The technician was professional, punctual, and explained everything clearly.
+                        </p>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-1">
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#d4b25a]/20 to-[#b37a1a]/20 px-3 py-1 rounded-full">
+                            <span class="text-[#b37a1a] font-semibold text-sm">Smart Lock Installation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl border-[3px] border-[#FFAA33] hover:border-yellow-300/80 w-full max-w-2xl mx-4" style="display: none;">
+                    <div class="flex items-center mb-6">
+                        <div class="avatar w-12 h-12 rounded-full text-white flex items-center justify-center mr-4 font-bold text-lg shadow-lg">
+                            AJ
+                        </div>
+                        <div class="text-left">
+                            <p class="text-lg font-bold text-gray-800">Alex Johnson</p>
+                            <p class="text-sm text-gray-500 flex items-center justify-center sm:justify-start">
+                              <span class="material-icons mr-2 text-yellow-500 text-base">location_on</span>
+                                North Bergen, NJ
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="quote-icon mb-2">"</div>
+                        <p class="text-gray-700 leading-relaxed text-base italic">
+                            Had my car key replaced in North Bergen. Quick service and fair pricing. The new key works perfectly! They arrived within 20 minutes and had me back on the road in no time.
+                        </p>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-1">
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#d4b25a]/20 to-[#b37a1a]/20 px-3 py-1 rounded-full">
+                            <span class="text-[#b37a1a] font-semibold text-sm">Car Key Replacement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl border-[3px] border-[#FFAA33] hover:border-yellow-300/80 w-full max-w-2xl mx-4" style="display: none;">
+                    <div class="flex items-center mb-6">
+                        <div class="avatar w-12 h-12 rounded-full text-white flex items-center justify-center mr-4 font-bold text-lg shadow-lg">
+                            MR
+                        </div>
+                        <div class="text-left">
+                            <p class="text-lg font-bold text-gray-800">Michael Rodriguez</p>
+                            <p class="text-sm text-gray-500 flex items-center justify-center sm:justify-start">
+                              <span class="material-icons mr-2 text-yellow-500 text-base">location_on</span>
+                                 Montclair, NJ
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="quote-icon mb-2">"</div>
+                        <p class="text-gray-700 leading-relaxed text-base italic">
+                            Emergency lockout service at 2 AM - they came out immediately! Professional, courteous, and got me back into my apartment without any damage to the door. Highly recommend!
+                        </p>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-1">
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#d4b25a]/20 to-[#b37a1a]/20 px-3 py-1 rounded-full">
+                            <span class="text-[#b37a1a] font-semibold text-sm">Emergency Lockout</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl border-[3px] border-[#FFAA33] hover:border-yellow-300/80 w-full max-w-2xl mx-4" style="display: none;">
+                    <div class="flex items-center mb-6">
+                        <div class="avatar w-12 h-12 rounded-full text-white flex items-center justify-center mr-4 font-bold text-lg shadow-lg">
+                            SC
+                        </div>
+                        <div class="text-left">
+                            <p class="text-lg font-bold text-gray-800">Sarah Chen</p>
+                            <p class="text-sm text-gray-500 flex items-center justify-center sm:justify-start">
+                              <span class="material-icons mr-2 text-yellow-500 text-base">location_on</span>
+                                Little Falls, NJ
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="quote-icon mb-2">"</div>
+                        <p class="text-gray-700 leading-relaxed text-base italic">
+                            Upgraded our office security system with new locks and access controls. The team was incredibly professional and completed the work after hours to avoid disrupting our business.
+                        </p>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-1">
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#d4b25a]/20 to-[#b37a1a]/20 px-3 py-1 rounded-full">
+                            <span class="text-[#b37a1a] font-semibold text-sm">Commercial Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-xl border-[3px] border-[#FFAA33] hover:border-yellow-300/80 w-full max-w-2xl mx-4" style="display: none;">
+                    <div class="flex items-center mb-6">
+                        <div class="avatar w-12 h-12 rounded-full text-white flex items-center justify-center mr-4 font-bold text-lg shadow-lg">
+                            DW
+                        </div>
+                        <div class="text-left">
+                            <p class="text-lg font-bold text-gray-800">David Wilson</p>
+                            <p class="text-sm text-gray-500 flex items-center justify-center sm:justify-start">
+                              <span class="material-icons mr-2 text-yellow-500 text-base">location_on</span>
+                                Cedar Grove, NJ
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="quote-icon mb-2">"</div>
+                        <p class="text-gray-700 leading-relaxed text-base italic">
+                            Rekeyed all the locks when we moved into our new home. Fair pricing, excellent workmanship, and they provided great advice on home security. Will definitely use them again!
+                        </p>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-1">
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                            <span class="star text-xl">★</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#d4b25a]/20 to-[#b37a1a]/20 px-3 py-1 rounded-full">
+                            <span class="text-[#b37a1a] font-semibold text-sm">Lock Rekeying</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="flex justify-center space-x-3 mb-8">
+            <span class="dot active w-3 h-3 rounded-full bg-gray-400 cursor-pointer" onclick="currentSlide(1)"></span>
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" onclick="currentSlide(2)"></span>
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" onclick="currentSlide(3)"></span>
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" onclick="currentSlide(4)"></span>
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+</section>
+
+</main>
+    <footer class="bg-black text-white pt-12 pb-6 px-6 md:px-12 border-t-2 border-yellow-600">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <!-- Company Info -->
+        <div>
+            <img src="../images/footer-logo.webp" alt="Key-Kong Logo" class="mb-4 w-31">
+            <p class="mb-4 text-gray-300">
+            Professional locksmith services available 24/7 in North Bergen and surrounding areas.
+            </p>
+            <ul class="space-y-2 text-gray-300">
+            <li class="flex items-center"><span class="material-icons text-[#FFAF1E] mr-2">call</span> <strong>210-900-6996</strong></li>
+            <li class="flex items-center"><span class="material-icons text-[#FFAF1E] mr-2">email</span>info@key-kong-locksmith.com</li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+            <h4 class="text-yellow-500 font-semibold mb-3">Services</h4>
+            <ul class="space-y-2">
+            <li class="flex items-center"><span class="material-icons text-[#FFAF1E] mr-2">schedule</span> Emergency Locksmith</li>
+            <li class="flex items-center"><span class="material-icons text-[#FFAF1E] mr-2">bolt</span> Residential Locksmith</li>
+            <li class="flex items-center"><span class="material-icons text-[#FFAF1E] mr-2">build</span> Commercial Locksmith</li>
+            <li class="flex items-center"><span class="material-icons text-[#FFAF1E] mr-2">door_front</span> Automotive Locksmith</li>
+            </ul>
+        </div>
+
+        <!-- Service Areas -->
+        <div>
+            <h4 class="text-yellow-500 font-semibold mb-3">Service Areas</h4>
+            <ul class="space-y-2 text-gray-300">
+                <li class="flex items-center">
+                <svg class="w-5 h-5 text-yellow-500 mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-5.25-6-12a6 6 0 1112 0c0 6.75-6 12-6 12z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                California
+                </li>
+                <li class="flex items-center">
+                <svg class="w-5 h-5 text-[#FFAF1E] mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-5.25-6-12a6 6 0 1112 0c0 6.75-6 12-6 12z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                Florida
+                </li>
+                <li class="flex items-center">
+                <svg class="w-5 h-5 text-[#FFAF1E] mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-5.25-6-12a6 6 0 1112 0c0 6.75-6 12-6 12z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                Georgia
+                </li>
+                <li class="flex items-center">
+                <svg class="w-5 h-5 text-[#FFAF1E] mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-5.25-6-12a6 6 0 1112 0c0 6.75-6 12-6 12z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                New Jersey
+                </li>
+                <li class="flex items-center">
+                <svg class="w-5 h-5 text-[#FFAF1E] mr-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-5.25-6-12a6 6 0 1112 0c0 6.75-6 12-6 12z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                Texas
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Quick Links & Social -->
+        <div class="mt-6 md:mt-0">
+              <h4 class="text-yellow-500 font-semibold mb-3">Quick Links</h4>
+              <ul class="space-y-2">
+                  <li>
+                    <a href="/nav/about.html" class="flex items-center text-gray-300 hover:text-yellow-500 transition">
+                        <span class="material-icons text-[#FFAF1E] mr-2">info</span> About Us
+                    </a>
+                  </li>
+                  <li>
+                  <a href="/nav/services.html" class="flex items-center text-gray-300 hover:text-[#FFAA33] transition-colors">
+                      <span class="material-icons mr-2 text-[#FFAA33]">build</span>
+                      Services
+                  </a>
+                  </li>
+                  <li>
+                  <a href="/nav/serviceareas.html" class="flex items-center text-gray-300 hover:text-[#FFAA33] transition-colors">
+                      <span class="material-icons mr-2 text-[#FFAA33]">place</span>
+                      Service Areas
+                  </a>
+                  </li>
+                  <li>
+                  <a href="/nav/faq.html" class="flex items-center text-gray-300 hover:text-yellow-500 transition">
+                      <span class="material-icons text-[#FFAF1E] mr-2">help</span> FAQ
+                  </a>
+                  </li>
+                  <li>
+                  <a href="/nav/reviews.html" class="flex items-center text-gray-300 hover:text-yellow-500 transition">
+                      <span class="material-icons text-[#FFAF1E] mr-2">star</span> Reviews
+                  </a>
+                  </li>
+                  <li>
+                  <a href="/nav/contact.html" class="flex items-center text-gray-300 hover:text-yellow-500 transition">
+                      <span class="material-icons text-[#FFAF1E] mr-2">contacts</span> Contact
+                  </a>
+                  </li>
+                  <li>
+                  </li>
+                  <li>
+                  <a href="/nav/sitemap.html" class="flex items-center text-gray-300 hover:text-yellow-500 transition">
+                      <span class="material-icons text-[#FFAF1E] mr-2">list</span> Sitemap
+                  </a>
+                  </li>
+              </ul>
+          </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-10 pt-6 border-t border-yellow-600 text-center text-gray-400 text-sm">
+      <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-6">
+        <div class="flex items-center space-x-4 mb-4 md:mb-0">
+          <span class="flex items-center"><span class="material-icons text-yellow-500 mr-1">verified</span> Licensed & Insured</span>
+          <span class="flex items-center"><span class="material-icons text-yellow-500 mr-1">star</span> 5.0★ Rated</span>
+        </div>
+        <div>
+          <p>© 2023 Key Kong Locksmith, LLC</p>
+          <div class="space-x-4 mt-2">
+            <a href="/legal/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+            <a href="/legal/terms-and-conditions.html" class="hover:text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuButton = event.target.closest('button');
+      
+      if (!mobileMenu.contains(event.target) && (!menuButton || !menuButton.onclick)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <script>
+    let currentSlideIndex = 1;
+    const totalSlides = 5;
+
+    // Get all review cards and dots
+    const reviewCards = document.querySelectorAll('.review-card');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function showSlide(n) {
+        if (n > totalSlides) currentSlideIndex = 1;
+        if (n < 1) currentSlideIndex = totalSlides;
+        
+        // Hide all slides
+        reviewCards.forEach((card, index) => {
+            card.style.display = 'none';
+            card.classList.remove('active', 'prev');
+        });
+        
+        // Remove active class from all dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide
+        const currentCard = reviewCards[currentSlideIndex - 1];
+        currentCard.style.display = 'block';
+        setTimeout(() => {
+            currentCard.classList.add('active');
+        }, 10);
+        
+        // Activate current dot
+        dots[currentSlideIndex - 1].classList.add('active');
+        
+        // Update button states
+        prevBtn.disabled = currentSlideIndex === 1;
+        nextBtn.disabled = currentSlideIndex === totalSlides;
+    }
+
+    function nextSlide() {
+        currentSlideIndex++;
+        showSlide(currentSlideIndex);
+    }
+
+    function prevSlide() {
+        currentSlideIndex--;
+        showSlide(currentSlideIndex);
+    }
+
+    function currentSlide(n) {
+        currentSlideIndex = n;
+        showSlide(currentSlideIndex);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Auto-advance slides every 5 seconds
+    let autoSlide = setInterval(nextSlide, 5000);
+
+    // Pause auto-advance on hover
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlide);
+    });
+
+    slideshowContainer.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(nextSlide, 5000);
+    });
+
+    // Initialize the slideshow
+    showSlide(currentSlideIndex);
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let endX = 0;
+
+    slideshowContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slideshowContainer.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeDistance = startX - endX;
+        const minSwipeDistance = 50;
+        
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+            if (swipeDistance > 0) {
+                nextSlide(); // Swipe left - next slide
+            } else {
+                prevSlide(); // Swipe right - previous slide
+            }
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+  </script>
+
+</body>
+</html>
