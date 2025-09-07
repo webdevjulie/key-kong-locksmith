@@ -630,6 +630,20 @@
     </div>
   </footer>
 
+  <script>
+     function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  }
+
+  function toggleSubMenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.classList.toggle('hidden');
+  }
+  </script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 <script>
 function filterSitemap(searchTerm) {
   const cards = document.querySelectorAll('.sitemap-card');

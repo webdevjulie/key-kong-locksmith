@@ -247,10 +247,10 @@
 
   <!-- Mobile Action Buttons -->
   <div class="flex flex-col space-y-2 p-4 border-t border-[#d4b25a] mt-2">
-    <a href="tel:2109006996" class="flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
-      <span class="material-icons text-lg">phone</span>
-      <span>Call Us</span>
-    </a>
+    <a href="tel:2109006996" class="flex items-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
+        <span class="material-icons text-lg">phone</span>
+        <span>Call Us</span>
+      </a>
     <a href="/key-kong-locksmith/nav/book-online.html" class="flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
       <span class="material-icons text-lg">calendar_today</span>
       <span>Book Service</span>
@@ -269,7 +269,7 @@
 
             <!-- Breadcrumb -->
             <div class="text-sm text-yellow-400 mb-4 self-start max-w-full">
-                <a href="/index.html" class="hover:underline">Home</a> 
+                <a href="/key-kong-locksmith/index.html" class="hover:underline">Home</a> 
                 <span class="mx-2">›</span> 
                 <span>About</span>
             </div>
@@ -849,23 +849,19 @@
 </main>
 
   <script>
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.classList.toggle('hidden');
-    }
+     function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  }
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const mobileMenu = document.getElementById('mobileMenu');
-      const menuButton = event.target.closest('button');
-      
-      if (!mobileMenu.contains(event.target) && (!menuButton || !menuButton.onclick)) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
+  function toggleSubMenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.classList.toggle('hidden');
+  }
   </script>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 
 </body>
 </html>

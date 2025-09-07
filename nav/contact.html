@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="./styles.css">
     <style>
         body {
@@ -292,7 +291,8 @@
 
   <!-- Mobile Action Buttons -->
   <div class="flex flex-col space-y-2 p-4 border-t border-[#d4b25a] mt-2">
-    <a href="tel:2109006996" class="flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
+    <a href="tel:+12109006996" 
+      class="flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-5 py-3 font-semibold text-white transform hover:scale-105">
       <span class="material-icons text-lg">phone</span>
       <span>Call Us</span>
     </a>
@@ -304,7 +304,6 @@
 </div>
 
     <main>
-
       <section class="relative h-screen flex flex-col justify-center items-center px-6 w-full" style="background-image: url('../images/contact.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <!-- Blur overlay -->
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
@@ -330,39 +329,39 @@
             </p>
 
             <!-- Contact Intro -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-4xl mx-auto">
-                <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-xl px-6 py-6 flex-1 text-center">
-                    <div class="text-2xl font-bold text-yellow-400 mb-2">Get in Touch</div>
-                    <div class="text-sm text-yellow-200">
-                        Reach out to us for any inquiries or to schedule a service. We're here to help!
-                    </div>
-                </div>
-                <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-xl px-6 py-6 flex-1 text-center">
-                    <div class="text-2xl font-bold text-yellow-400 mb-2">Fast Response</div>
-                    <div class="text-sm text-yellow-200">
-                        Our team responds quickly to all messages and requests to ensure your needs are met.
-                    </div>
-                </div>
-                <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-xl px-6 py-6 flex-1 text-center">
-                    <div class="text-2xl font-bold text-yellow-400 mb-2">Trusted Service</div>
-                    <div class="text-sm text-yellow-200">
-                        Experienced professionals you can rely on for quality service every time.
-                    </div>
-                </div>
+          <div class="flex flex-col sm:flex-row justify-center gap-3 w-full max-w-4xl mx-auto">
+            <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-lg px-3 py-3 sm:px-6 sm:py-6 flex-1 text-center">
+              <div class="text-base sm:text-2xl font-bold text-yellow-400 mb-1 sm:mb-2">Get in Touch</div>
+              <div class="text-xs sm:text-sm text-yellow-200">
+                Contact us for questions or booking.
+              </div>
             </div>
+            <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-lg px-3 py-3 sm:px-6 sm:py-6 flex-1 text-center">
+              <div class="text-base sm:text-2xl font-bold text-yellow-400 mb-1 sm:mb-2">Fast Response</div>
+              <div class="text-xs sm:text-sm text-yellow-200">
+                Quick replies to all requests.
+              </div>
+            </div>
+            <div class="bg-transparent border border-[2px] border-[#FFAA33] rounded-lg px-3 py-3 sm:px-6 sm:py-6 flex-1 text-center">
+              <div class="text-base sm:text-2xl font-bold text-yellow-400 mb-1 sm:mb-2">Trusted Service</div>
+              <div class="text-xs sm:text-sm text-yellow-200">
+                Reliable locksmiths you can trust.
+              </div>
+            </div>
+          </div>
         </div>
     </section>
 
-    <section class="gradient-bg py-20 px-4 sm:px-6 lg:px-8 min-h-screen">
+    <section class="bg-[#fefcf9] py-20 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div class="max-w-7xl mx-auto">
 
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h1 class="text-4xl sm:text-5xl font-bold text-[#FFAF1E] mb-4">
             Get In Touch
           </h1>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Our experienced team provides fast, reliable service for everything from emergency lockouts to advanced security system installations for homes and businesses. Serving North Bergen and beyond, we offer clear communication, transparent pricing, and peace of mind with every job.
+          <p class="text-base sm:text-xl text-gray-700 max-w-2xl mx-auto">
+            Fast, reliable locksmiths for lockouts and security systems — serving North Bergen and nearby areas.
           </p>
         </div>
 
@@ -372,13 +371,13 @@
           <div class="space-y-6">
             
             <!-- Call Us -->
-            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 text-gray-900 rounded-2xl shadow-lg p-8 card-hover border border-yellow-200">
-              <h3 class="text-2xl font-semibold text-[#FFAF1E] mb-6 flex items-center">
+            <div class="bg-transparent text-gray-900 rounded-2xl shadow-lg p-8 card-hover border-[3px] border-[#FFAA33]">
+              <h3 class="text-2xl font-semibold text-black mb-6 flex items-center">
                 <span class="material-icons mr-3 text-[#FFAF1E] text-2xl icon-pulse">call</span> 
                 Call Us Now
               </h3>
               <div class="space-y-3">
-                <p class="text-2xl font-bold text-gray-900">(201) 554-6769</p>
+                <p class="text-2xl font-bold text-gray-700">(210) 900-6996</p>
                 <p class="text-base text-gray-600 flex items-center">
                   <span class="material-icons text-green-500 mr-2 text-sm">schedule</span>
                   Available 24/7 for emergencies
@@ -387,13 +386,13 @@
             </div>
 
             <!-- Email Us -->
-            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 text-gray-900 rounded-2xl shadow-lg p-8 card-hover border border-yellow-200">
-              <h3 class="text-2xl font-semibold text-[#FFAF1E]  mb-6 flex items-center">
+            <div class="bg-transparent text-gray-900 rounded-2xl shadow-lg p-8 card-hover border-[3px] border-[#FFAA33]">
+              <h3 class="text-2xl font-semibold text-black  mb-6 flex items-center">
                 <span class="material-icons mr-3 text-[#FFAF1E] text-2xl">email</span> 
                 Email Us
               </h3>
               <div class="space-y-3">
-                <p class="text-xl font-medium text-gray-900 break-all">ez2fixllc@gmail.com</p>
+                <p class="text-xl font-bold text-gray-700 break-all">info@key-kong-locksmith.com</p>
                 <p class="text-base text-gray-600 flex items-center">
                   <span class="material-icons text-blue-500 mr-2 text-sm">access_time</span>
                   We'll respond within 24 hours
@@ -402,34 +401,26 @@
             </div>
 
             <!-- Service Area -->
-            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 text-gray-900 rounded-2xl shadow-lg p-8 card-hover border border-yellow-200">
-              <h3 class="text-2xl font-semibold text-[#FFAF1E] mb-6 flex items-center">
+            <div class="bg-transparent text-gray-900 rounded-2xl shadow-lg p-8 card-hover border-[3px] border-[#FFAA33]">
+              <h3 class="text-2xl font-semibold text-black mb-6 flex items-center">
                 <span class="material-icons mr-3 text-[#FFAF1E] text-2xl">location_on</span> 
                 Service Area
               </h3>
               <div class="space-y-3">
                 <p class="text-lg text-gray-900 leading-relaxed">
-                  Bergen County, Hudson County, Passaic County, and Essex County
-                </p>
-                <p class="text-sm text-gray-600 flex items-center">
-                  <span class="material-icons text-green-500 mr-2 text-sm">verified</span>
-                  Licensed contractor #13VH13553300
+                 Serving North Bergen, NJ and surrounding areas
                 </p>
               </div>
             </div>
 
             <!-- Hours -->
-            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 text-gray-900 rounded-2xl shadow-lg p-8 card-hover border border-yellow-200">
-              <h3 class="text-2xl font-semibold text-[#FFAF1E] mb-6 flex items-center">
+            <div class="bg-transparent text-gray-900 rounded-2xl shadow-lg p-8 card-hover border-[3px] border-[#FFAA33]">
+              <h3 class="text-2xl font-semibold text-black mb-6 flex items-center">
                 <span class="material-icons mr-3 text-[#FFAF1E] text-2xl">schedule</span> 
                 Hours
               </h3>
               <div class="space-y-3">
                 <p class="text-xl font-medium text-gray-900">24/7 Emergency Service Available</p>
-                <p class="text-sm text-gray-600 flex items-center">
-                  <span class="material-icons text-green-500 mr-2 text-sm">verified</span>
-                  Licensed contractor #13VH13553300
-                </p>
               </div>
             </div>
           </div>
@@ -440,12 +431,12 @@
               <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 Get Your Free Estimate
               </h2>
-              <p class="text-lg text-yellow-700 leading-relaxed">
+              <p class="text-lg text-gray-700 leading-relaxed">
                 Fill out this form and we'll contact you with a personalized estimate for your garage door needs.
               </p>
             </div>
 
-            <form action="#" method="POST" class="space-y-6">
+            <form id="serviceForm" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
                 <!-- Name -->
@@ -710,6 +701,38 @@
       </div>
     </div>
   </footer>
+
+  <script>
+document.getElementById("serviceForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Collect form values
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const service = document.getElementById("service").value;
+  const timeframe = document.getElementById("timeframe").value;
+  const address = document.getElementById("address").value;
+  const notes = document.getElementById("notes").value;
+
+  // Format message
+  const message = `📋 New Service Request:
+👤 Name: ${name}
+📞 Phone: ${phone}
+📧 Email: ${email}
+🛠 Service: ${service}
+⏰ Timeframe: ${timeframe}
+🏠 Address: ${address}
+📝 Notes: ${notes}`;
+
+  // Replace with YOUR number (include country code, no + or spaces)
+  const whatsappNumber = "09384251369"; // Example: 63 = PH, then 9xxxxxxxxx
+
+  // Open WhatsApp
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+});
+</script>
 
   <script>
     function toggleMobileMenu() {
