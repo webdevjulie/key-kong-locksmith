@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-    <script src="script.js"></script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -355,67 +354,75 @@
         </div>
 
         <!-- Form Body -->
-        <form id="serviceForm" class="p-8 space-y-8">
-            <!-- Personal Information -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Name -->
+<form id="serviceForm" class="p-8 space-y-8">
+    <!-- Personal Information -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Name -->
+        <div class="relative">
+            <label class="block text-black font-bold mb-3">Full Name *</label>
             <div class="relative">
-                <label class="block text-black font-bold mb-3">Full Name *</label>
-                <div class="relative">
                 <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-500">person</span>
                 <input type="text" id="fullName" placeholder="Enter your full name" 
                     class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300">
-                </div>
             </div>
+        </div>
 
-            <!-- Phone -->
+        <!-- Phone -->
+        <div class="relative">
+            <label class="block text-black font-bold mb-3">Phone Number *</label>
             <div class="relative">
-                <label class="block text-black font-bold mb-3">Phone Number *</label>
-                <div class="relative">
                 <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-500">phone</span>
                 <input type="tel" id="phoneNumber" placeholder="(555) 123-4567" 
                     class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300">
-                </div>
             </div>
-            </div>
+        </div>
+    </div>
 
-            <!-- Service Address -->
-            <div class="relative">
-            <label class="block text-black font-bold mb-3">Service Address *</label>
-            <div class="relative">
-                <span class="material-icons absolute left-4 top-6 text-yellow-500">location_on</span>
-                <textarea id="serviceAddress" rows="3" placeholder="Enter complete address including city, state, and ZIP code" 
+    <!-- Service Address -->
+    <div class="relative">
+        <label class="block text-black font-bold mb-3">Service Address *</label>
+        <div class="relative">
+            <span class="material-icons absolute left-4 top-6 text-yellow-500">location_on</span>
+            <textarea id="serviceAddress" rows="3" placeholder="Enter complete address including city, state, and ZIP code" 
                 class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none"></textarea>
-            </div>
-            </div>
+        </div>
+    </div>
 
-            <!-- Service Details -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Service Type -->
+    <!-- Email -->
+  <div class="relative">
+      <label class="block text-black font-bold mb-3">Email *</label>
+      <div class="relative">
+          <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-500">email</span>
+          <input type="email" id="email" placeholder="Enter your email" 
+              class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300"
+              required>
+      </div>
+  </div>
+
+    <!-- Service Details -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Service Type -->
+        <div class="relative">
+            <label class="block text-black font-bold mb-3">Service Needed *</label>
             <div class="relative">
-                <label class="block text-black font-bold mb-3">Service Needed *</label>
-                <div class="relative">
                 <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">build</span>
                 <select id="serviceType" 
                     class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 appearance-none">
                     <option value="">Select service type...</option>
-                    <option value="emergency-lockout">Emergency Lockout</option>
-                    <option value="lock-installation">Lock Installation</option>
-                    <option value="lock-repair">Lock Repair</option>
-                    <option value="key-duplication">Key Duplication</option>
-                    <option value="rekey-service">Rekey Service</option>
-                    <option value="car-key-replacement">Car Key Replacement</option>
-                    <option value="commercial-service">Commercial Service</option>
+                    <option value="emergency-locksmith">Emergency Locksmith</option>
+                    <option value="residential-locksmith">Residential Locksmith</option>
+                    <option value="commercial-locksmith">Commercial Locksmith</option>
+                    <option value="automotive-locksmith">Automotive Locksmith</option>
                     <option value="other">Other (specify in notes)</option>
                 </select>
                 <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
-                </div>
             </div>
+        </div>
 
-            <!-- Urgency -->
+        <!-- Urgency -->
+        <div class="relative">
+            <label class="block text-black font-bold mb-3">When do you need service? *</label>
             <div class="relative">
-                <label class="block text-black font-bold mb-3">When do you need service? *</label>
-                <div class="relative">
                 <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">schedule</span>
                 <select id="urgency" 
                     class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 appearance-none">
@@ -428,66 +435,45 @@
                     <option value="flexible">I'm Flexible</option>
                 </select>
                 <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
-                </div>
             </div>
-            </div>
+        </div>
+    </div>
 
-            <!-- Additional Notes -->
-            <div class="relative">
-            <label class="block text-black font-bold mb-3">Additional Details</label>
-            <div class="relative">
-                <span class="material-icons absolute left-4 top-6 text-gray-500">note</span>
-                <textarea id="additionalNotes" rows="4" placeholder="Please provide any additional details about your service request..." 
-                class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none"></textarea>
-            </div>
-            </div>
+    <!-- Additional Notes -->
+    <div class="relative">
+        <label class="block text-black font-bold mb-3">Additional Details</label>
+        <div class="relative">
+            <span class="material-icons absolute left-4 top-6 text-gray-500">note</span>
+            <textarea id="additionalNotes" rows="4" placeholder="Please provide any additional details about your service request..." 
+            class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none"></textarea>
+        </div>
+    </div>
 
-            <!-- Contact Preference -->
+    <!-- Privacy Notice -->
+    <div class="bg-transparent rounded-xl p-6 border border-yellow-400">
+        <div class="flex items-start space-x-3">
+            <span class="material-icons text-[#FFAF1E] mt-1">info</span>
             <div>
-            <label class="block text-black font-bold mb-4">How would you like us to contact you?</label>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <label class="flex items-center space-x-3 bg-transparent border-2 border-yellow-400 rounded-xl p-4 cursor-pointer hover:bg-gray-750 transition-all duration-300">
-                <input type="radio" name="contactMethod" value="phone" class="w-5 h-5 text-[#FFAF1E] focus:ring-[#FFAF1E] focus:ring-2">
-                <span class="material-icons text-[#FFAF1E]">phone</span>
-                <span class="text-black">Phone Call</span>
-                </label>
-                <label class="flex items-center space-x-3 bg-transparent border-2 border-yellow-400 rounded-xl p-4 cursor-pointer hover:bg-gray-750 transition-all duration-300">
-                <input type="radio" name="contactMethod" value="text" class="w-5 h-5 text-[#FFAF1E] focus:ring-[#FFAF1E] focus:ring-2">
-                <span class="material-icons text-[#FFAF1E]">sms</span>
-                <span class="text-black">Text Message</span>
-                </label>
-                <label class="flex items-center space-x-3 bg-transparent border-2 border-yellow-400 rounded-xl p-4 cursor-pointer hover:bg-gray-750 transition-all duration-300">
-                <input type="radio" name="contactMethod" value="either" checked class="w-5 h-5 text-[#FFAF1E] focus:ring-[#FFAF1E] focus:ring-2">
-                <span class="material-icons text-[#FFAF1E]">contact_support</span>
-                <span class="text-black">Either</span>
-                </label>
-            </div>
-            </div>
-
-            <!-- Privacy Notice -->
-            <div class="bg-transparent rounded-xl p-6 border border-yellow-400">
-            <div class="flex items-start space-x-3">
-                <span class="material-icons text-[#FFAF1E] mt-1">info</span>
-                <div>
                 <p class="text-black text-sm leading-relaxed">
                     Your information is secure and will only be used to provide locksmith services. We respect your privacy and never share personal data with third parties.
                 </p>
-                </div>
             </div>
-            </div>
+        </div>
+    </div>
 
-            <!-- Submit Button -->
-            <div class="text-center pt-6">
-            <button type="submit" 
-                class="inline-flex items-center px-12 py-5 bg-[#FFAF1E] hover:bg-[#FFB84D] text-black font-bold text-lg rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#FFAF1E]/25">
-                <span class="material-icons mr-3 text-2xl">send</span>
-                Request Service Now
-            </button>
-            <p class="text-gray-400 mt-4 text-sm">
-                Average response time: <span class="text-[#FFAF1E] font-semibold">Under 5 minutes</span>
-            </p>
-            </div>
-        </form>
+    <!-- Submit Button -->
+    <div class="text-center pt-6">
+         <button type="submit" 
+            class="inline-flex items-center px-12 py-5 bg-[#FFAF1E] hover:bg-[#FFB84D] text-black font-bold text-lg rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#FFAF1E]/25">
+            <span class="material-icons mr-3 text-2xl">send</span>
+            Request Service Now
+        </button>
+        <p class="text-gray-400 mt-4 text-sm">
+            Average response time: <span class="text-[#FFAF1E] font-semibold">Under 5 minutes</span>
+        </p>
+    </div>
+</form>
+
         </div>
     </div>
     </section>
@@ -553,10 +539,11 @@
         For emergency lockouts or urgent service needs, don't wait - call us directly for immediate dispatch.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="tel:2017482070" class="inline-flex items-center px-8 py-4 bg-[#FFAF1E] hover:bg-[#FFB84D] text-black font-bold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg">
-          <span class="material-icons mr-3 text-2xl">phone</span>
-          Call (201) 748-2070
-        </a>
+         <a href="tel:+12109006996" 
+            class="bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 ease-in-out px-6 py-3 rounded-md shadow flex items-center gap-2">
+            <span class="material-icons text-lg">call</span>
+            Call (210) 900-6996
+            </a>
         <div class="flex items-center font-bold text-[#FFAF1E]">
           <span class="material-icons mr-2">access_time</span>
           <span>Available 24/7</span>
@@ -699,109 +686,17 @@
   </footer>
 
   <script>
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.classList.toggle('hidden');
-    }
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const mobileMenu = document.getElementById('mobileMenu');
-      const menuButton = event.target.closest('button');
-      
-      if (!mobileMenu.contains(event.target) && (!menuButton || !menuButton.onclick)) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
-
-    // Form validation and submission
-    document.getElementById('serviceForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form elements
-      const fullName = document.getElementById('fullName').value.trim();
-      const phoneNumber = document.getElementById('phoneNumber').value.trim();
-      const serviceAddress = document.getElementById('serviceAddress').value.trim();
-      const serviceType = document.getElementById('serviceType').value;
-      const urgency = document.getElementById('urgency').value;
-      
-      // Simple validation
-      if (!fullName || !phoneNumber || !serviceAddress || !serviceType || !urgency) {
-        showNotification('Please fill in all required fields.', 'error');
-        return;
-      }
-      
-      // Show success message
-      showNotification('Service request submitted successfully! We\'ll contact you within 5 minutes.', 'success');
-      
-      // Reset form
-      this.reset();
-    });
-
-    // Notification system
-    function showNotification(message, type) {
-      const notification = document.createElement('div');
-      notification.className = `fixed top-24 right-4 z-50 p-6 rounded-xl shadow-lg max-w-sm transform transition-all duration-300 ${
-        type === 'success' 
-          ? 'bg-green-600 text-white' 
-          : 'bg-red-600 text-white'
-      }`;
-      
-      notification.innerHTML = `
-        <div class="flex items-center space-x-3">
-          <span class="material-icons">${type === 'success' ? 'check_circle' : 'error'}</span>
-          <p class="font-medium">${message}</p>
-        </div>
-      `;
-      
-      document.body.appendChild(notification);
-      
-      // Remove notification after 5 seconds
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-          document.body.removeChild(notification);
-        }, 300);
-      }, 5000);
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelector('a[href="#booking-form"]').addEventListener('click', function(e) {
-      e.preventDefault();
-      document.getElementById('booking-form').scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-
-    // Phone number formatting
-    document.getElementById('phoneNumber').addEventListener('input', function(e) {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length >= 6) {
-        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
-      } else if (value.length >= 3) {
-        value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
-      }
-      e.target.value = value;
-    });
-  </script>
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-  <script>
      function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     menu.classList.toggle('hidden');
-  }
+    }
 
-  function toggleSubMenu(id) {
-    const submenu = document.getElementById(id);
-    submenu.classList.toggle('hidden');
-  }
+    function toggleSubMenu(id) {
+      const submenu = document.getElementById(id);
+      submenu.classList.toggle('hidden');
+    }
   </script>
-  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-  
 </body>
 </html>
