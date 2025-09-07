@@ -281,7 +281,7 @@
   </div>
 </div>
 
-<section class="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-12 bg-[url('./images/california.webp')] bg-cover bg-center bg-no-repeat">
+<section class="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-12 bg-[url('./images/california.webp')] bg-cover bg-center bg-no-repeat pt-20 md:pt-24">
   <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
 
   <!-- Main Content Container -->
@@ -869,19 +869,14 @@
 
   <script>
     function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenu.classList.toggle('hidden');
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
     }
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const mobileMenu = document.getElementById('mobileMenu');
-      const menuButton = event.target.closest('button');
-      
-      if (!mobileMenu.contains(event.target) && (!menuButton || !menuButton.onclick)) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
+    function toggleSubMenu(id) {
+      const submenu = document.getElementById(id);
+      submenu.classList.toggle('hidden');
+    }
   </script>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>

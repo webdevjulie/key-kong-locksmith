@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <!-- NAVIGATION WITH TOP INFO BAR -->
@@ -254,116 +255,117 @@
 </div>
 
 <main>
-    <!-- HERO SECTION -->
-  <section class="pt-24 md:pt-32 px-6 sm:px-10 md:px-16 lg:px-20 pb-10 md:pb-20 flex flex-col md:flex-row justify-between bg-[url('images/garage.webp')] bg-cover bg-center relative">
+<!-- HERO SECTION -->
+<section class="pt-20 md:pt-32 px-4 sm:px-8 md:px-16 lg:px-20 pb-10 md:pb-20 flex flex-col md:flex-row justify-between bg-[url('images/garage.webp')] bg-cover bg-center relative">
 
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
-    <!-- Left Side: Text + Badges -->
-    <div class="relative z-10 flex flex-col md:w-1/2 text-center md:text-left justify-center h-full space-y-3 md:space-y-4 px-4 md:px-0">
+  <!-- Left Side: Text + Badges -->
+  <div class="relative z-10 flex flex-col md:w-1/2 text-center md:text-left justify-center h-full space-y-4 px-2 md:px-0">
 
-      <!-- Top Badge -->
-      <div class="initial-hidden animate-fadeInLeft delay-100 inline-block bg-yellow-400 text-blue-900 font-semibold text-xs px-3 py-1 rounded-full w-max animate-pulse-custom">
-        ⭐ Top-Rated Local Locksmith
-      </div>
-
-      <!-- Headline -->
-      <h1 class="initial-hidden animate-fadeInLeft delay-200 font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug max-w-xl text-white">
-        <span class="text-[#FFAF1E]">Quick</span> Locksmith Services in North Bergen
-      </h1>
-
-      <!-- Subtext -->
-      <p class="initial-hidden animate-fadeInLeft delay-300 text-sm sm:text-base md:text-sm lg:text-base text-white max-w-xl">
-        Available 24/7 for all your residential, commercial, and automotive locksmith needs. Professional service and reliable solutions when you need them.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="initial-hidden animate-fadeInLeft delay-400 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 max-w-md">
-        <a href="tel:+12109006996" 
-          class="hover-scale flex items-center justify-center space-x-2 bg-[#FFC000] hover:bg-[#F4C430] hover:text-black transition-all duration-300 rounded-md px-4 py-2 font-semibold text-white text-sm sm:text-base transform hover:scale-105">
-          <span class="material-icons text-sm sm:text-base">call</span>
-          <span>Call Now</span>
-        </a>
-        <a href="/key-kong-locksmith/services/services.html" 
-          class="hover-scale flex items-center justify-center space-x-2 border border-[#FFC000] rounded-md px-4 py-2 font-semibold text-yellow-400 text-sm sm:text-base hover:bg-[#F4C430] hover:text-black transition-all duration-300 transform hover:scale-105">
-          <span>Our Services</span>
-        </a>
-      </div>
-
-      <!-- Trust Badges -->
-      <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-3 sm:mt-4">
-        <div class="initial-hidden animate-fadeInUp delay-500 trust-badge bg-white bg-opacity-10 p-2 rounded-md text-white backdrop-blur flex flex-col items-center text-xs sm:text-sm">
-          <span class="material-icons text-xl sm:text-2xl mb-1 animate-float">schedule</span>
-          <div class="font-bold text-[#F4C430] text-xs sm:text-sm">24/7 Service</div>
-          <p class="text-white/80 text-xs">Always available</p>
-        </div>
-        <div class="initial-hidden animate-fadeInUp delay-600 trust-badge bg-white bg-opacity-10 p-2 rounded-md text-white backdrop-blur flex flex-col items-center text-xs sm:text-sm">
-          <span class="material-icons text-xl sm:text-2xl mb-1 animate-float" style="animation-delay: 0.5s;">shield</span>
-          <div class="font-bold text-[#F4C430] text-xs sm:text-sm">Licensed & Insured</div>
-          <p class="text-white/80 text-xs">Your safety first</p>
-        </div>
-        <div class="initial-hidden animate-fadeInUp delay-700 trust-badge bg-white bg-opacity-10 p-2 rounded-md text-white backdrop-blur flex flex-col items-center text-xs sm:text-sm">
-          <span class="material-icons text-xl sm:text-2xl mb-1 animate-float" style="animation-delay: 1s;">star</span>
-          <div class="font-bold text-[#F4C430] text-xs sm:text-sm">5-Star Rated</div>
-          <p class="text-white/80 text-xs">Trusted service</p>
-        </div>
-      </div>
+    <!-- Top Badge -->
+    <div class="initial-hidden animate-fadeInLeft delay-100 inline-block bg-yellow-400 text-blue-900 font-semibold text-xs sm:text-sm px-3 py-1 rounded-full w-max animate-pulse-custom">
+      ⭐ Top-Rated Local Locksmith
     </div>
 
-    <!-- Right Side: Compact Form -->
-    <div class="relative z-10 md:w-1/2 mt-8 md:mt-0 flex justify-center items-start h-full">
-      <div class="initial-hidden animate-fadeInRight delay-400 form-container bg-[#f9f6ec] border border-[#d4b25a] rounded-2xl shadow-lg p-5 w-full max-w-sm backdrop-blur-sm">
-        <h2 class="text-lg font-semibold text-center text-[#111111] mb-1">Request Service</h2>
-        <p class="text-xs text-center text-black mb-3">Get a response from our team</p>
+    <!-- Headline -->
+    <h1 class="initial-hidden animate-fadeInLeft delay-200 font-extrabold text-3xl sm:text-4xl md:text-5xl leading-snug max-w-xl text-white">
+      <span class="text-[#FFAF1E]">Quick</span> Locksmith Services in North Bergen
+    </h1>
 
-        <form action="#" method="POST" class="space-y-2">
-          <div>
-            <label class="block text-xs font-medium text-[#111111] mb-1">Your Name</label>
-            <input type="text" placeholder="Enter your name" class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm transition-all duration-300 hover:border-[#b37a1a] focus:scale-105">
-          </div>
+    <!-- Subtext -->
+    <p class="initial-hidden animate-fadeInLeft delay-300 text-base sm:text-lg text-white max-w-xl">
+      Available 24/7 for all your residential, commercial, and automotive locksmith needs. Professional service and reliable solutions when you need them.
+    </p>
 
-          <div>
-            <label class="block text-xs font-medium text-[#111111] mb-1">Phone Number</label>
-            <input type="tel" placeholder="Enter your phone number" class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm transition-all duration-300 hover:border-[#b37a1a] focus:scale-105">
-          </div>
+    <!-- CTA Buttons -->
+    <div class="initial-hidden animate-fadeInLeft delay-400 flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
+      <a href="tel:+12109006996" 
+        class="hover-scale flex items-center justify-center gap-2 bg-[#FFC000] hover:bg-[#F4C430] transition-all duration-300 rounded-lg px-5 py-3 font-semibold text-white text-base transform hover:scale-105">
+        <span class="material-icons text-lg">call</span>
+        <span>Call Now</span>
+      </a>
+      <a href="/key-kong-locksmith/services/services.html" 
+        class="hover-scale flex items-center justify-center gap-2 border border-[#FFC000] rounded-lg px-5 py-3 font-semibold text-yellow-400 text-base hover:bg-[#F4C430] hover:text-black transition-all duration-300 transform hover:scale-105">
+        <span>Our Services</span>
+      </a>
+    </div>
 
-          <div>
-            <label class="block text-xs font-medium text-[#111111] mb-1">Service Address</label>
-            <div class="w-full flex items-center justify-center border border-[#FFC000] rounded-md px-2 py-2 text-xs text-[#b37a1a] bg-white hover:border-[#b37a1a] transition-all duration-300">
-              <div class="animate-spin h-3 w-3 border-2 border-t-2 border-[#FFC000] rounded-full mr-1.5"></div>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-medium text-[#111111] mb-1">Service Needed</label>
-            <select class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md text-sm text-[#111111] bg-white focus:outline-none focus:ring-2 focus:ring-[#b37a1a] transition-all duration-300 hover:border-[#b37a1a] focus:scale-105">
-              <option>Select Service Needed</option>
-              <option>Lockout Assistance</option>
-              <option>Lock Installation</option>
-              <option>Key Duplication</option>
-              <option>Car Key Replacement</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs font-medium text-[#111111] mb-1">Additional Notes</label>
-            <textarea placeholder="Additional Notes..." rows="1" class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm transition-all duration-300 hover:border-[#b37a1a] focus:scale-105"></textarea>
-          </div>
-
-          <p class="text-[9px] text-[#666666] mt-1">
-            This site is protected by reCAPTCHA and the Google 
-            <a href="#" class="text-[#b37a1a] underline hover:text-[#d4b25a] transition-colors">Privacy Policy</a> and 
-            <a href="#" class="text-[#b37a1a] underline hover:text-[#d4b25a] transition-colors">Terms of Service</a> apply.
-          </p>
-
-          <button type="submit" class="mt-2 w-full bg-[#FFC000] hover:bg-[#F4C430] hover:text-black text-white font-semibold py-1.5 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-            Request Service
-          </button>
-        </form>
+    <!-- Trust Badges -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-5">
+      <div class="initial-hidden animate-fadeInUp delay-500 trust-badge bg-white bg-opacity-10 p-3 rounded-lg text-white backdrop-blur flex flex-col items-center text-sm w-28">
+        <span class="material-icons text-2xl mb-1 animate-float">schedule</span>
+        <div class="font-bold text-[#F4C430]">24/7</div>
+        <p class="text-white/80 text-xs">Always available</p>
+      </div>
+      <div class="initial-hidden animate-fadeInUp delay-600 trust-badge bg-white bg-opacity-10 p-3 rounded-lg text-white backdrop-blur flex flex-col items-center text-sm w-28">
+        <span class="material-icons text-2xl mb-1 animate-float">shield</span>
+        <div class="font-bold text-[#F4C430]">Licensed</div>
+        <p class="text-white/80 text-xs">Your safety first</p>
+      </div>
+      <div class="initial-hidden animate-fadeInUp delay-700 trust-badge bg-white bg-opacity-10 p-3 rounded-lg text-white backdrop-blur flex flex-col items-center text-sm w-28">
+        <span class="material-icons text-2xl mb-1 animate-float">star</span>
+        <div class="font-bold text-[#F4C430]">5-Star</div>
+        <p class="text-white/80 text-xs">Trusted service</p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Right Side: Compact Form -->
+  <div class="relative z-10 md:w-1/2 mt-10 md:mt-0 flex justify-center items-start h-full">
+    <div class="initial-hidden animate-fadeInRight delay-400 form-container bg-[#f9f6ec] border border-[#d4b25a] rounded-2xl shadow-lg p-6 w-full max-w-sm">
+      <h2 class="text-xl font-semibold text-center text-[#111111] mb-1">Request Service</h2>
+      <p class="text-sm text-center text-black mb-4">Get a response from our team</p>
+
+      <form action="#" method="POST" class="space-y-3">
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-1">Your Name</label>
+          <input type="text" placeholder="Enter your name" class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-1">Phone Number</label>
+          <input type="tel" placeholder="Enter your phone number" class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-1">Service Address</label>
+          <input type="text" placeholder="Enter your address" class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-1">Service Needed</label>
+          <select class="w-full px-3 py-2 border border-[#FFC000] rounded-md text-sm text-[#111111] bg-white focus:outline-none focus:ring-2 focus:ring-[#b37a1a]">
+            <option>Select Service Needed</option>
+            <option>Lockout Assistance</option>
+            <option>Lock Installation</option>
+            <option>Key Duplication</option>
+            <option>Car Key Replacement</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-1">Additional Notes</label>
+          <textarea placeholder="Additional Notes..." rows="2" class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm"></textarea>
+        </div>
+
+        <p class="text-[10px] text-[#666666] mt-2">
+          This site is protected by reCAPTCHA and the Google 
+          <a href="#" class="text-[#b37a1a] underline hover:text-[#d4b25a]">Privacy Policy</a> and 
+          <a href="#" class="text-[#b37a1a] underline hover:text-[#d4b25a]">Terms of Service</a> apply.
+        </p>
+
+        <div class="g-recaptcha" data-sitekey="6LdGP8ErAAAAAPgx0oSgjnG1BEO6wBvhEDWraXWd"></div>
+
+        <button type="submit" class="mt-3 w-full bg-[#FFC000] hover:bg-[#F4C430] text-white font-semibold py-2 rounded-md transition-all duration-300 transform hover:scale-105">
+          Request Service
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
     <!-- STATS / SERVICES SECTION -->
     <section class="bg-[#fefcf9] py-12 md:py-16">
@@ -1164,6 +1166,14 @@
   </script>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script>
+document.getElementById('serviceForm').addEventListener('submit', function(e) {
+  if (grecaptcha.getResponse() === '') {
+    e.preventDefault();
+    alert('Please verify that you are not a robot.');
+  }
+});
+</script>
 
 </body>
 </html>
