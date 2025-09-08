@@ -31,6 +31,22 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
         }
+
+        .story-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* allow expansion */
+            /* remove fixed height if you have any */
+        }
+
+        .story-text-container {
+            overflow: hidden; /* keeps preview clipped if needed */
+        }
+
+        .card-gradient {
+            transition: all 0.3s ease;
+        }
+
         
         .text-shadow {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -102,17 +118,7 @@
                 transform: translateX(-50%);
             }
         }
-        
-        /* Fixed card height */
-        .story-card {
-            height: 450px;
-        }
-        
-        .story-text-container {
-            height: 100px;
-            overflow: hidden;
-        }
-        
+
         .story-text {
             transition: none;
         }
@@ -369,64 +375,58 @@
 
 <main>
 
-    <!-- hero -->
-<section class="relative bg-cover bg-center text-white min-h-screen flex items-center px-6 pt-24 sm:pt-32" style="background-image: url('../images/services.webp');">
-    <!-- Blur overlay -->
-    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-12 pt-28 md:pt-32"
+            style="background-image: url('../images/services.webp');">
 
-    <!-- Content Container -->
-    <div class="relative z-10 text-center w-full max-w-6xl mx-auto">
-        <h2 class="text-3xl sm:text-5xl font-bold mb-6">
-            <span class="text-yellow-500">Complete Locksmith & Security Solutions</span>
-        </h2>
-        <p class="text-base sm:text-lg mb-12 max-w-3xl mx-auto">
-            Trusted by homeowners and businesses across New Jersey for professional locksmith services, emergency assistance, and modern security installations. Available 24/7 with certified technicians.
-        </p>
+        <!-- Dark lightly blurred overlay -->
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:+12017482070" 
-               class="bg-gradient-to-r from-[#FFAA33] to-[#FFAA33] hover:from-[#F4C430] hover:to-[#F4C430] hover:text-black px-4 py-2 sm:px-8 sm:py-4 rounded-full text-base sm:text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl flex items-center gap-2 sm:gap-3">
-                <span class="material-icons text-xl sm:text-2xl pulse-animation">call</span>
-                Call Now: (201) 748-2070
-            </a>
+        <!-- Content Container -->
+        <div class="relative z-10 text-center w-full max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-snug sm:leading-tight">
+                <span class="text-[#FFAA33]">Complete Locksmith & Security Solutions</span>
+            </h2>
             
-            <a href="/key-kong-locksmith/nav/book-online.html" target="_blank">
-                <button class="bg-transparent border-2 border-[#FFAA33] text-[#FFAA33] hover:bg-[#F4C430] hover:text-black px-4 py-2 sm:px-8 sm:py-4 rounded-full text-base sm:text-xl font-bold transition-all duration-300 transform hover:scale-105 flex items-center gap-2 sm:gap-3">
-                    <span class="material-icons text-xl sm:text-2xl">event</span>
+            <p class="text-base sm:text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-200">
+                Trusted by homeowners and businesses across New Jersey for professional locksmith services, emergency assistance, and modern security installations. Available 24/7 with certified technicians.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center mb-8">
+                <a href="tel:+12017482070" 
+                class="w-full sm:w-auto bg-gradient-to-r from-[#FFAA33] to-[#FFAA33] hover:from-[#F4C430] hover:to-[#F4C430] hover:text-black px-5 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center gap-2 sm:gap-3">
+                    <span class="material-icons text-lg sm:text-2xl animate-pulse">call</span>
+                    Call Now: (201) 748-2070
+                </a>
+
+                <a href="/key-kong-locksmith/nav/book-online.html" target="_blank"
+                class="w-full sm:w-auto bg-transparent border-2 border-[#FFAA33] text-[#FFAA33] hover:bg-[#F4C430] hover:text-black px-5 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-xl font-bold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 sm:gap-3">
+                    <span class="material-icons text-lg sm:text-2xl">event</span>
                     Book Online Service
-                </button>
-            </a>
+                </a>
+            </div>
 
+            <!-- Service Features Grid -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-black/30 backdrop-blur-sm text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2 border-2 border-[#FFAA33]">
+                    <span class="material-icons text-[#FFAA33] text-sm sm:text-base">verified</span>
+                    Licensed & Insured
+                </span>
+                <span class="bg-black/30 backdrop-blur-sm text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2 border-2 border-[#FFAA33]">
+                    <span class="material-icons text-[#FFAA33] text-sm sm:text-base">schedule</span>
+                    Available 24/7
+                </span>
+                <span class="bg-black/30 backdrop-blur-sm text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2 border-2 border-[#FFAA33]">
+                    <span class="material-icons text-[#FFAA33] text-sm sm:text-base">speed</span>
+                    Fast Response Time
+                </span>
+                <span class="bg-black/30 backdrop-blur-sm text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2 border-2 border-[#FFAA33]">
+                    <span class="material-icons text-[#FFAA33] text-sm sm:text-base">engineering</span>
+                    Certified Technicians
+                </span>
+            </div>
         </div>
-
-        <!-- Service Features Grid -->
-        <div class="flex flex-wrap justify-center gap-3">
-            <!-- Licensed & Insured -->
-            <span class="bg-black bg-opacity-30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 border-2 border-[#FFAA33]">
-                <span class="material-icons text-[#FFAA33] text-base">verified</span>
-                Licensed & Insured
-            </span>
-
-            <!-- Available 24/7 -->
-            <span class="bg-black bg-opacity-30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 border-2 border-[#FFAA33]">
-                <span class="material-icons text-[#FFAA33] text-base">schedule</span>
-                Available 24/7
-            </span>
-
-            <!-- Fast Response Time -->
-            <span class="bg-black bg-opacity-30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 border-2 border-[#FFAA33]">
-                <span class="material-icons text-[#FFAA33] text-base">speed</span>
-                Fast Response Time
-            </span>
-
-            <!-- Certified Technicians -->
-            <span class="bg-black bg-opacity-30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 border-2 border-[#FFAA33]">
-                <span class="material-icons text-[#FFAA33] text-base">engineering</span>
-                Certified Technicians
-            </span>
-        </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- STATS / SERVICES SECTION -->
@@ -867,7 +867,7 @@
                     <div class="px-6 pb-6 pt-0">
                         <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg border-l-4 border-yellow-400">
                             <p class="text-gray-700 text-base leading-relaxed">
-                                We serve North Bergen and surrounding areas including Jersey City, Union City, West New York, Secaucus, Weehawken, Hoboken, and Guttenberg.
+                                We serve California and surrounding areas including Sacramento, Los Angeles, San Diego, San Francisco, and San Jose.
                             </p>
                         </div>
                     </div>
@@ -1166,39 +1166,39 @@
   </footer>
 
 
-      <script>
+    <script>
         document.querySelectorAll('.toggle-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-              const card = btn.closest('.story-card');
-              const storyText = card.querySelector('.story-text');
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.story-card');
+                const storyText = card.querySelector('.story-text');
 
-              // Debug log
-              console.log(storyText.dataset.full, storyText.dataset.preview);
+                if (btn.textContent === 'Continue Reading') {
+                    storyText.textContent = storyText.dataset.full;
+                    btn.textContent = 'Show Less';
+                } else {
+                    storyText.textContent = storyText.dataset.preview;
+                    btn.textContent = 'Continue Reading';
+                }
 
-              if (btn.textContent === 'Continue Reading') {
-                  storyText.textContent = storyText.dataset.full;
-                  btn.textContent = 'Show Less';
-              } else {
-                  storyText.textContent = storyText.dataset.preview;
-                  btn.textContent = 'Continue Reading';
-              }
-          });
-      });
+                // Force the card to resize dynamically
+                card.style.height = 'auto';
+            });
+        });
     </script>
 
-    <script>
-     function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('hidden');
-  }
 
-  function toggleSubMenu(id) {
-    const submenu = document.getElementById(id);
-    submenu.classList.toggle('hidden');
-  }
-  </script>
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleSubMenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.classList.toggle('hidden');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 
 </body>
