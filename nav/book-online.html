@@ -329,154 +329,153 @@
     </section>
 
     <!-- Booking Form Section -->
-    <section id="booking-form" class="bg-[#fefcf9] py-20">
-    <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
-                <span class="text-[#FFAF1E]"> Schedule</span>  Your Service
-            </h2>
-        <p class="text-gray-700 text-lg">Fill out the form below and we'll get back to you within minutes</p>
-        </div>
+<section id="booking-form" class="bg-[#fefcf9] py-20">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+        <span class="text-[#FFAF1E]">Schedule</span> Your Service
+      </h2>
+      <p class="text-gray-700 text-lg">Fill out the form below and we'll get back to you within minutes</p>
+    </div>
 
-        <div class="bg-transparent rounded-3xl shadow-2xl overflow-hidden border border-gray-800">
-        <!-- Form Header -->
-        <div class="bg-transparent px-8 py-6">
-            <div class="flex items-center justify-between">
-            <div>
-                <h3 class="text-xl font-bold text-black">Service Request Form</h3>
-                <p class="text-black text-opacity-80">All fields are required</p>
-            </div>
-            <div class="flex items-center space-x-2 text-black">
-                <span class="material-icons">lock</span>
-                <span class="text-sm font-medium">Secure & Encrypted</span>
-            </div>
-            </div>
+    <div class="bg-transparent rounded-3xl shadow-2xl overflow-hidden border border-[3px] border-[#FFAA33] ">
+      <!-- Form Header -->
+      <div class="bg-transparent px-8 py-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-black">Service Request Form</h3>
+            <p class="text-black text-opacity-80">All fields are required</p>
+          </div>
+          <div class="flex items-center space-x-2 text-black">
+            <span class="material-icons">lock</span>
+            <span class="text-sm font-medium">Secure & Encrypted</span>
+          </div>
         </div>
+      </div>
 
-        <!-- Form Body -->
-<form id="serviceForm" class="p-8 space-y-8">
-    <!-- Personal Information -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Name -->
-        <div class="relative">
+      <!-- Form Body -->
+      <form id="serviceForm" class="p-8 space-y-8">
+        <!-- Personal Information -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Name -->
+          <div class="relative">
             <label class="block text-black font-bold mb-3">Full Name *</label>
             <div class="relative">
-                <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-500">person</span>
-                <input type="text" id="fullName" placeholder="Enter your full name" 
-                    class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300">
+              <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-[#FFAA33]">person</span>
+              <input type="text" id="fullName" placeholder="Enter your full name" 
+                class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 text-base">
             </div>
-        </div>
+          </div>
 
-        <!-- Phone -->
-        <div class="relative">
+          <!-- Phone -->
+          <div class="relative">
             <label class="block text-black font-bold mb-3">Phone Number *</label>
             <div class="relative">
-                <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-500">phone</span>
-                <input type="tel" id="phoneNumber" placeholder="(555) 123-4567" 
-                    class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300">
+              <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-[#FFAA33]">phone</span>
+              <input type="tel" id="phoneNumber" placeholder="(555) 123-4567" 
+                class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 text-base">
             </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Service Address -->
-    <div class="relative">
-        <label class="block text-black font-bold mb-3">Service Address *</label>
+        <!-- Service Address -->
         <div class="relative">
-            <span class="material-icons absolute left-4 top-6 text-yellow-500">location_on</span>
+          <label class="block text-black font-bold mb-3">Service Address *</label>
+          <div class="relative">
+            <span class="material-icons absolute left-4 top-6 text-[#FFAA33]">location_on</span>
             <textarea id="serviceAddress" rows="3" placeholder="Enter complete address including city, state, and ZIP code" 
-                class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none"></textarea>
+              class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none text-base"></textarea>
+          </div>
         </div>
-    </div>
 
-    <!-- Email -->
-  <div class="relative">
-      <label class="block text-black font-bold mb-3">Email *</label>
-      <div class="relative">
-          <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-500">email</span>
-          <input type="email" id="email" placeholder="Enter your email" 
-              class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300"
-              required>
-      </div>
-  </div>
-
-    <!-- Service Details -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Service Type -->
+        <!-- Email -->
         <div class="relative">
+          <label class="block text-black font-bold mb-3">Email *</label>
+          <div class="relative">
+            <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-[#FFAA33]">email</span>
+            <input type="email" id="email" placeholder="Enter your email" 
+              class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 text-base" required>
+          </div>
+        </div>
+
+        <!-- Service Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Service Type -->
+          <div class="relative">
             <label class="block text-black font-bold mb-3">Service Needed *</label>
             <div class="relative">
-                <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">build</span>
-                <select id="serviceType" 
-                    class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 appearance-none">
-                    <option value="">Select service type...</option>
-                    <option value="emergency-locksmith">Emergency Locksmith</option>
-                    <option value="residential-locksmith">Residential Locksmith</option>
-                    <option value="commercial-locksmith">Commercial Locksmith</option>
-                    <option value="automotive-locksmith">Automotive Locksmith</option>
-                    <option value="other">Other (specify in notes)</option>
-                </select>
-                <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
+              <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-[#FFAA33]">build</span>
+              <select id="serviceType" 
+                class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 appearance-none text-base">
+                <option value="">Select service type...</option>
+                <option value="emergency-locksmith">Emergency Locksmith</option>
+                <option value="residential-locksmith">Residential Locksmith</option>
+                <option value="commercial-locksmith">Commercial Locksmith</option>
+                <option value="automotive-locksmith">Automotive Locksmith</option>
+                <option value="other">Other (specify in notes)</option>
+              </select>
+              <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
             </div>
-        </div>
+          </div>
 
-        <!-- Urgency -->
-        <div class="relative">
+          <!-- Urgency -->
+          <div class="relative">
             <label class="block text-black font-bold mb-3">When do you need service? *</label>
             <div class="relative">
-                <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500">schedule</span>
-                <select id="urgency" 
-                    class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 appearance-none">
-                    <option value="">Select timeframe...</option>
-                    <option value="emergency">Emergency (ASAP)</option>
-                    <option value="today">Today</option>
-                    <option value="tomorrow">Tomorrow</option>
-                    <option value="this-week">This Week</option>
-                    <option value="next-week">Next Week</option>
-                    <option value="flexible">I'm Flexible</option>
-                </select>
-                <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
+              <span class="material-icons absolute left-4 top-1/2 transform -translate-y-1/2 text-[#FFAA33]">schedule</span>
+              <select id="urgency" 
+                class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 appearance-none text-base">
+                <option value="">Select timeframe...</option>
+                <option value="emergency">Emergency (ASAP)</option>
+                <option value="today">Today</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="this-week">This Week</option>
+                <option value="next-week">Next Week</option>
+                <option value="flexible">I'm Flexible</option>
+              </select>
+              <span class="material-icons absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none">expand_more</span>
             </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Additional Notes -->
-    <div class="relative">
-        <label class="block text-black font-bold mb-3">Additional Details</label>
+        <!-- Additional Notes -->
         <div class="relative">
-            <span class="material-icons absolute left-4 top-6 text-gray-500">note</span>
+          <label class="block text-black font-bold mb-3">Additional Details</label>
+          <div class="relative">
+            <span class="material-icons absolute left-4 top-6 text-[#FFAA33]">note</span>
             <textarea id="additionalNotes" rows="4" placeholder="Please provide any additional details about your service request..." 
-            class="w-full bg-transparent border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none"></textarea>
+              class="w-full bg-white border-2 border-yellow-400 rounded-xl pl-12 pr-4 py-4 text-black placeholder-gray-500 focus:outline-none focus:border-[#FFAF1E] transition-all duration-300 resize-none text-base"></textarea>
+          </div>
         </div>
-    </div>
 
-    <!-- Privacy Notice -->
-    <div class="bg-transparent rounded-xl p-6 border border-yellow-400">
-        <div class="flex items-start space-x-3">
+        <!-- Privacy Notice -->
+        <div class="bg-white rounded-xl p-6 border border-yellow-400">
+          <div class="flex items-start space-x-3">
             <span class="material-icons text-[#FFAF1E] mt-1">info</span>
             <div>
-                <p class="text-black text-sm leading-relaxed">
-                    Your information is secure and will only be used to provide locksmith services. We respect your privacy and never share personal data with third parties.
-                </p>
+              <p class="text-black text-sm leading-relaxed">
+                Your information is secure and will only be used to provide locksmith services. We respect your privacy and never share personal data with third parties.
+              </p>
             </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Submit Button -->
-    <div class="text-center pt-6">
-         <button type="submit" 
+        <!-- Submit Button -->
+        <div class="text-center pt-6">
+          <button type="submit" 
             class="inline-flex items-center px-12 py-5 bg-[#FFAF1E] hover:bg-[#FFB84D] text-black font-bold text-lg rounded-xl transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#FFAF1E]/25">
             <span class="material-icons mr-3 text-2xl">send</span>
             Request Service Now
-        </button>
-        <p class="text-gray-400 mt-4 text-sm">
+          </button>
+          <p class="text-gray-400 mt-4 text-sm">
             Average response time: <span class="text-[#FFAF1E] font-semibold">Under 5 minutes</span>
-        </p>
-    </div>
-</form>
-
+          </p>
         </div>
+      </form>
     </div>
-    </section>
+  </div>
+</section>
+
 
 
 <!-- Benefits Section -->

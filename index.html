@@ -286,7 +286,7 @@
         <span class="material-icons text-lg">call</span>
         <span>Call Now</span>
       </a>
-      <a href="/key-kong-locksmith/services/services.html" 
+      <a href="/key-kong-locksmith/nav/services.html" 
         class="hover-scale flex items-center justify-center gap-2 border border-[#FFC000] rounded-lg px-5 py-3 font-semibold text-yellow-400 text-base hover:bg-[#F4C430] hover:text-black transition-all duration-300 transform hover:scale-105">
         <span>Our Services</span>
       </a>
@@ -312,66 +312,64 @@
     </div>
   </div>
 
-  <!-- Right Side: Compact Form -->
-  <div class="relative z-10 md:w-1/2 mt-10 md:mt-0 flex justify-center items-start h-full">
-    <div class="initial-hidden animate-fadeInRight delay-400 form-container bg-[#f9f6ec] border border-[#d4b25a] rounded-2xl shadow-lg p-6 w-full max-w-sm">
-      <h2 class="text-xl font-semibold text-center text-[#111111] mb-1">Request Service</h2>
-      <p class="text-sm text-center text-black mb-4">Get a response from our team</p>
-<!-- Include Google reCAPTCHA API -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <div class="relative z-10 md:w-1/2 mt-2 md:mt-0 flex justify-center items-start h-screen">
+  <div class="bg-[#f9f6ec] border border-[#d4b25a] rounded-2xl shadow-lg p-3 w-full max-w-sm flex flex-col justify-between" style="max-height: 95vh;">
+    <div>
+      <h2 class="text-xl font-semibold text-center text-[#111111] mb-0.5">Request Service</h2>
+      <p class="text-sm text-center text-black mb-2">Get a response from our team</p>
 
-<form id="serviceForm" class="space-y-3">
-  <div>
-    <label class="block text-sm font-medium text-[#111111] mb-1">Your Name</label>
-    <input type="text" name="name" placeholder="Enter your name" required
-      class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
-  </div>
+      <form id="serviceForm" class="space-y-1">
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-0.5">Your Name</label>
+          <input type="text" name="name" placeholder="Enter your name" required
+            class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
 
-  <div>
-    <label class="block text-sm font-medium text-[#111111] mb-1">Your Email</label>
-    <input type="email" name="email" placeholder="Enter your email" required
-      class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
-  </div>
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-0.5">Your Email</label>
+          <input type="email" name="email" placeholder="Enter your email" required
+            class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
 
-  <div>
-    <label class="block text-sm font-medium text-[#111111] mb-1">Phone Number</label>
-    <input type="tel" name="phone" placeholder="Enter your phone number" required
-      class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
-  </div>
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-0.5">Phone Number</label>
+          <input type="tel" name="phone" placeholder="Enter your phone number" required
+            class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
 
-  <div>
-    <label class="block text-sm font-medium text-[#111111] mb-1">Service Address</label>
-    <input type="text" name="address" placeholder="Enter your address" required
-      class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
-  </div>
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-0.5">Service Address</label>
+          <input type="text" name="address" placeholder="Enter your address" required
+            class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm">
+        </div>
 
-  <div>
-    <label class="block text-sm font-medium text-[#111111] mb-1">Service Needed</label>
-    <select name="service" required
-      class="w-full px-3 py-2 border border-[#FFC000] rounded-md text-sm text-[#111111] bg-white focus:outline-none focus:ring-2 focus:ring-[#b37a1a]">
-      <option value="">Select Service Needed</option>
-      <option>Emergency Locksmith</option>
-      <option>Residential Locksmith</option>
-      <option>Commercial Locksmith</option>
-      <option>Automotive Locksmith</option>
-    </select>
-  </div>
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-0.5">Service Needed</label>
+          <select name="service" required
+            class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md text-sm text-[#111111] bg-white focus:outline-none focus:ring-2 focus:ring-[#b37a1a]">
+            <option value="">Select Service Needed</option>
+            <option>Emergency Locksmith</option>
+            <option>Residential Locksmith</option>
+            <option>Commercial Locksmith</option>
+            <option>Automotive Locksmith</option>
+          </select>
+        </div>
 
-  <div>
-    <label class="block text-sm font-medium text-[#111111] mb-1">Additional Notes</label>
-    <textarea name="notes" placeholder="Additional Notes..." rows="2"
-      class="w-full px-3 py-2 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm"></textarea>
-  </div>
+        <div>
+          <label class="block text-sm font-medium text-[#111111] mb-0.5">Additional Notes</label>
+          <textarea name="notes" placeholder="Additional Notes..." rows="1"
+            class="w-full px-2 py-1.5 border border-[#FFC000] rounded-md focus:outline-none focus:ring-2 focus:ring-[#b37a1a] bg-white text-[#111111] text-sm"></textarea>
+        </div>
 
-   <div class="g-recaptcha" data-sitekey="6LelEH4rAAAAAPDBTwSymiJmxb5J7gKb_UifVRv0"></div>
-
-  <button type="submit"
-    class="mt-3 w-full bg-[#FFC000] hover:bg-[#F4C430] text-white font-semibold py-2 rounded-md transition-all duration-300 transform hover:scale-105">
-    Request Service
-  </button>
-</form>
+        <button type="submit"
+          class="mt-1 w-full bg-[#FFC000] hover:bg-[#F4C430] text-white font-semibold py-1.5 rounded-md transition-all duration-300 transform hover:scale-105">
+          Request Service
+        </button>
+      </form>
     </div>
   </div>
+</div>
+
 </section>
 
 
@@ -1176,29 +1174,17 @@
   </script>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-<script>
-document.getElementById('serviceForm').addEventListener('submit', function(e) {
-  if (grecaptcha.getResponse() === '') {
-    e.preventDefault();
-    alert('Please verify that you are not a robot.');
-  }
-});
-</script>
 
-<script>
+  <!-- Include Google reCAPTCHA API -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
 const form = document.getElementById("serviceForm");
 const RESEND_API_KEY = "re_6y42tWuq_48NAB9Q7iRo7bd73Z2GiB6BN";
 const RECEIVER_EMAIL = "delosreyesjuliranne199@gmail.com";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  // Get the reCAPTCHA response
-  const recaptchaResponse = grecaptcha.getResponse();
-  if (!recaptchaResponse) {
-    alert("Please complete the reCAPTCHA!");
-    return;
-  }
 
   // Collect form data
   const formData = {
@@ -1237,7 +1223,6 @@ form.addEventListener("submit", async (e) => {
     if (response.ok) {
       alert("Service request sent successfully!");
       form.reset();
-      grecaptcha.reset();
     } else {
       alert("Failed to send service request. Please try again.");
       console.error(await response.text());
@@ -1248,6 +1233,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 </script>
+
 
 </body>
 </html>
